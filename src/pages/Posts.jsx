@@ -11,7 +11,7 @@ export default function Posts() {
     setIsLoading(true);
     setTimeout(() => {
       getData();
-    }, 3000);
+    }, 1000);
   }, []);
 
   const getData = async () => {
@@ -35,7 +35,7 @@ export default function Posts() {
           <CircularProgress />
         </Box>
       ) : (
-        posts && <PostsList posts={posts} />
+        posts && <PostsList posts={posts} setPosts={setPosts} />
       )}
     </Box>
   );

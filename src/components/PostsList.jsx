@@ -8,7 +8,7 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import PostItem from "./PostItem";
 
-export default function PostsList({ posts }) {
+export default function PostsList({ posts, setPosts }) {
   return (
     <TableContainer component={Paper} sx={{ maxWidth: "80%", margin: "auto" }}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -22,7 +22,7 @@ export default function PostsList({ posts }) {
         </TableHead>
         <TableBody>
           {posts.map((post, index) => (
-            <PostItem key={post.id} post={post} index={index} />
+            <PostItem key={post.id} post={post} index={index} setPosts={setPosts} posts={posts} />
           ))}
         </TableBody>
       </Table>
