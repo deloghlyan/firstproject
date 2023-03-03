@@ -1,7 +1,6 @@
 import { Delete, Edit } from "@mui/icons-material";
 import { Box, IconButton, TableCell, TableRow, Input } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import EditIcon from "@mui/icons-material/Edit";
 import DoneIcon from "@mui/icons-material/Done";
 import CancelIcon from "@mui/icons-material/Cancel";
 
@@ -43,7 +42,6 @@ export default function PostItem({ posts, post, index, setPosts }) {
 
   return (
     <TableRow sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
-      {/* {editable ? Input : } */}
       <TableCell component="th" align="center">
         {index + 1}
       </TableCell>
