@@ -8,10 +8,11 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import PostItem from "./PostItem";
 
-export default function PostsList({ posts }) {
+export default function PostsList({ posts, setPosts }) {
   if (!posts || !posts.length) {
     return <h2>No Posts Found!</h2>;
   }
+
   return (
     <TableContainer component={Paper} sx={{ maxWidth: "80%", margin: "auto" }}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -29,6 +30,8 @@ export default function PostsList({ posts }) {
               key={post.id}
               post={post}
               index={index}
+              posts={posts}
+              setPosts={setPosts}
             />
           ))}
         </TableBody>

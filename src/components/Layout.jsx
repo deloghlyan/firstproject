@@ -1,5 +1,4 @@
 import * as React from "react";
-import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -31,7 +30,7 @@ export default function Layout({ children, ...props }) {
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
         <Button component={Link} to={"/"} sx={{ color: "#fff", fontSize: 22 }}>
-          MyBlog
+          First Project
         </Button>
       </Typography>
       <Divider />
@@ -78,7 +77,7 @@ export default function Layout({ children, ...props }) {
               to={"/"}
               sx={{ color: "#fff", fontSize: 22 }}
             >
-              MyBlog
+              First Project
             </Button>
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
@@ -115,7 +114,7 @@ export default function Layout({ children, ...props }) {
           {drawer}
         </Drawer>
       </Box>
-      <Box component="main" width={'100%'} minHeight={"100vh"} sx={{ p: 3 }}>
+      <Box component="main" width={"100%"} minHeight={"100vh"} sx={{ p: 3 }}>
         <Toolbar />
         {children}
       </Box>

@@ -1,13 +1,15 @@
 import { Delete, Edit } from "@mui/icons-material";
 import { Box, IconButton, TableCell, TableRow, Input } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import DoneIcon from "@mui/icons-material/Done";
 import CancelIcon from "@mui/icons-material/Cancel";
+import { useNavigate } from "react-router";
 
 export default function PostItem({ posts, post, index, setPosts }) {
   const [editable, setEditable] = useState(false);
   const [editTitle, setEditTitle] = useState("");
   const [editBody, setEditBody] = useState("");
+  const navigate = useNavigate();
   // const [changable, setChangable] = useState(false);
 
   const removeItem = (id) => {
@@ -34,18 +36,17 @@ export default function PostItem({ posts, post, index, setPosts }) {
     setEditable(false);
   };
 
-  // useEffect(() => {
-  //   return () => {
-  //     console.log('Deleted');
-  //   }
-  // }, []);
-
   return (
     <TableRow sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
       <TableCell component="th" align="center">
         {index + 1}
       </TableCell>
-      <TableCell component="th" align="center">
+      <TableCell
+        component="th"
+        align="center"
+        onClick={() => navigate(`/posts/${post.id}`)}
+        sx={{ cursor: "pointer" }}
+      >
         {editable ? (
           <Input
             value={editTitle}

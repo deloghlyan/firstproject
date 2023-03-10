@@ -18,11 +18,13 @@ export default function Pagination ({ totalCount, limit, page, setPage }) {
         <Box
           key={pageNumber}
           onClick={() => setPage(pageNumber)}
-          border="1px solid black"
+          border="1px solid #e8e3e3"
           padding={1}
           sx={{
             cursor: "pointer",
-            background: pageNumber === page && "grey",
+            background: pageNumber === page && "#c7bdbd",
+            color: "#706060",
+            margin: "0 5px"
           }}
         >
           {pageNumber}
